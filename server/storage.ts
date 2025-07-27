@@ -27,6 +27,28 @@ export class MemStorage implements IStorage {
   constructor() {
     this.users = new Map();
     this.apiKeys = new Map();
+    this.seedDefaultAdmin();
+  }
+
+  private async seedDefaultAdmin() {
+    // Create default admin user if no users exist
+    setTimeout(async () => {
+      if (this.users.size === 0) {
+        const bcrypt = await import('bcryptjs');
+        const hashedPassword = await bcrypt.hash('admin123', 12);
+        const defaultAdmin: User = {
+          id: 'default-admin-id',
+          username: 'admin',
+          password: hashedPassword,
+          gpgPublicKey: null,
+          gpgEnabled: false,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        };
+        this.users.set('default-admin-id', defaultAdmin);
+        console.log('Default admin user created: username=admin, password=admin123');
+      }
+    }, 100);
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -82,7 +104,9 @@ export class MemStorage implements IStorage {
     const apiKey: ApiKey = { 
       ...insertApiKey, 
       id,
-      isActive: insertApiKey.isActive || true,
+      isActive: insertApiKey.isActive ?? true,
+      userId: insertApiKey.userId ?? null,
+      expiresAt: insertApiKey.expiresAt ?? null,
       createdAt: new Date()
     };
     this.apiKeys.set(id, apiKey);

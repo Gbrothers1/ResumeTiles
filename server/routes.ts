@@ -106,7 +106,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Admin registration (only if no user exists)
-  app.post("/api/admin/register", async (req, res) => {
+  app.post("/api/auth/register", async (req, res) => {
     try {
       const { username, password } = loginSchema.parse(req.body);
       
@@ -136,6 +136,78 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Registration error:", error);
       res.status(400).json({ message: "Invalid request data" });
+    }
+  });
+
+  // Admin routes (protected)
+  app.get("/api/admin/api-keys", requireAuth, async (req, res) => {
+    try {
+      const apiKeys = await storage.getUserApiKeys(req.session.userId!);
+      res.json(apiKeys);
+    } catch (error) {
+      console.error("Error fetching API keys:", error);
+      res.status(500).json({ message: "Failed to fetch API keys" });
+    }
+  });
+
+  app.post("/api/admin/api-keys", requireAuth, async (req, res) => {
+    try {
+      const { keyName } = req.body;
+      if (!keyName) {
+        return res.status(400).json({ message: "Key name is required" });
+      }
+
+      const rawKey = generateApiKey();
+      const hashedKey = hashApiKey(rawKey);
+      
+      const apiKey = await storage.createApiKey({
+        keyName,
+        hashedKey,
+        userId: req.session.userId!,
+        isActive: true,
+        expiresAt: null
+      });
+
+      res.json({ 
+        ...apiKey, 
+        rawKey // Only returned once during creation
+      });
+    } catch (error) {
+      console.error("Error creating API key:", error);
+      res.status(500).json({ message: "Failed to create API key" });
+    }
+  });
+
+  app.put("/api/admin/gpg-settings", requireAuth, async (req, res) => {
+    try {
+      const { gpgPublicKey, gpgEnabled } = gpgSettingsSchema.parse(req.body);
+      
+      const user = await storage.updateUserGpgSettings(
+        req.session.userId!,
+        gpgPublicKey || null,
+        gpgEnabled
+      );
+
+      res.json({
+        id: user.id,
+        username: user.username,
+        gpgEnabled: user.gpgEnabled,
+        hasGpgKey: !!user.gpgPublicKey
+      });
+    } catch (error) {
+      console.error("Error updating GPG settings:", error);
+      res.status(400).json({ message: "Invalid request data" });
+    }
+  });
+
+  app.put("/api/admin/resume", requireAuth, async (req, res) => {
+    try {
+      const resumeData = insertResumeDataSchema.parse(req.body);
+      const updated = await storage.upsertResumeData(resumeData);
+      res.json(updated);
+    } catch (error) {
+      console.error("Error updating resume:", error);
+      res.status(400).json({ message: "Invalid resume data" });
     }
   });
 

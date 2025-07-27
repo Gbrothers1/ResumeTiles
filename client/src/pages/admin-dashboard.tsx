@@ -221,7 +221,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
               <Shield className="text-ios-blue h-8 w-8 mr-3" />
               <div>
                 <h1 className="text-xl font-bold text-ios-black">Admin Dashboard</h1>
-                <p className="text-sm text-ios-subtle">Welcome back, {user?.username || 'Admin'}</p>
+                <p className="text-sm text-ios-subtle">Welcome back, {(user as any)?.username || 'Admin'}</p>
               </div>
             </div>
             <Button
@@ -507,13 +507,13 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {apiKeys.length === 0 ? (
+                  {(!apiKeys || (apiKeys as any[]).length === 0) ? (
                     <p className="text-ios-subtle text-center py-8">
                       No API keys created yet. Generate one above to get started.
                     </p>
                   ) : (
                     <div className="space-y-3">
-                      {apiKeys.map((key: any) => (
+                      {(apiKeys as any[]).map((key: any) => (
                         <div
                           key={key.id}
                           className="flex items-center justify-between p-4 border border-ios-gray/30 rounded-ios"
