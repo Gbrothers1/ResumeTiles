@@ -1,0 +1,179 @@
+{
+  "personalInfo": {
+    "name": "Ethan Gordon",
+    "title": "Software Developer",
+    "email": "ethan@example.com",
+    "location": "Available Remotely",
+    "phone": "+1 (555) 123-4567",
+    "website": "https://ethangordon.io",
+    "linkedin": "https://linkedin.com/in/ethangordon",
+    "github": "https://github.com/Gbrothers1"
+  },
+  "summary": {
+    "text": "Passionate software developer with expertise in modern web technologies and a strong foundation in full-stack development. Experienced in building responsive applications, API integration, and creating user-friendly interfaces. Committed to writing clean, maintainable code and staying current with industry best practices.",
+    "highlights": [
+      "3+ years of professional development experience",
+      "15+ projects completed across various technologies",
+      "Strong focus on user experience and performance optimization",
+      "Expertise in modern JavaScript frameworks and cloud technologies"
+    ]
+  },
+  "currentFocus": {
+    "text": "Building innovative web applications and expanding expertise in cloud technologies, with a focus on creating scalable, efficient solutions that deliver exceptional user experiences."
+  },
+  "stats": {
+    "experience": "3+",
+    "projects": "15+",
+    "technologies": "12+",
+    "certifications": "3"
+  },
+  "experience": [
+    {
+      "title": "Software Developer",
+      "company": "Tech Solutions Inc.",
+      "period": "2022 - Present",
+      "location": "Remote",
+      "achievements": [
+        "Developed and maintained web applications using modern JavaScript frameworks",
+        "Collaborated with cross-functional teams to deliver projects on time",
+        "Implemented responsive design principles for optimal user experience",
+        "Reduced application load times by 40% through performance optimizations",
+        "Led code reviews and mentored junior developers"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "AWS", "MongoDB"]
+    },
+    {
+      "title": "Junior Developer",
+      "company": "Digital Agency LLC",
+      "period": "2021 - 2022",
+      "location": "Hybrid",
+      "achievements": [
+        "Built responsive websites using HTML, CSS, and JavaScript",
+        "Optimized website performance and implemented SEO best practices",
+        "Collaborated with design teams to implement pixel-perfect interfaces",
+        "Maintained and updated existing client websites"
+      ],
+      "technologies": ["HTML5", "CSS3", "JavaScript", "WordPress", "PHP"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Digital Resume Terminal",
+      "description": "A modern, terminal-style digital resume with GitHub integration, responsive design, and professional print functionality.",
+      "status": "Completed",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+      "githubUrl": "https://github.com/Gbrothers1/ethan_resume",
+      "liveUrl": "https://resume.ethangordon.io",
+      "featured": true
+    },
+    {
+      "name": "E-Commerce Platform",
+      "description": "Full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
+      "status": "Completed",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Express"],
+      "githubUrl": "#",
+      "liveUrl": "#",
+      "featured": true
+    },
+    {
+      "name": "Task Management App",
+      "description": "Mobile-first task management application with real-time collaboration features.",
+      "status": "In Progress",
+      "technologies": ["Vue.js", "Firebase", "PWA", "Vuetify"],
+      "githubUrl": "#",
+      "liveUrl": "#",
+      "featured": true
+    },
+    {
+      "name": "Weather Dashboard",
+      "description": "Real-time weather application with location-based forecasts and interactive maps.",
+      "status": "Completed",
+      "technologies": ["React", "OpenWeather API", "Leaflet", "Chart.js"],
+      "githubUrl": "#",
+      "liveUrl": "#",
+      "featured": false
+    }
+  ],
+  "skills": {
+    "programming": [
+      { "name": "JavaScript", "level": 5 },
+      { "name": "TypeScript", "level": 4 },
+      { "name": "Python", "level": 3 },
+      { "name": "HTML5", "level": 5 },
+      { "name": "CSS3", "level": 5 },
+      { "name": "SQL", "level": 3 }
+    ],
+    "frameworks": [
+      "React",
+      "Vue.js",
+      "Node.js",
+      "Express",
+      "Next.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "jQuery"
+    ],
+    "tools": [
+      "Git & GitHub",
+      "VS Code",
+      "MongoDB",
+      "PostgreSQL",
+      "Docker",
+      "AWS",
+      "Firebase",
+      "Figma",
+      "Postman",
+      "Webpack"
+    ],
+    "categories": {
+      "frontend": ["React", "Vue.js", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      "backend": ["Node.js", "Express", "Python", "RESTful APIs", "Database Design"],
+      "tools": ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL"],
+      "soft": ["Problem Solving", "Team Collaboration", "Code Review", "Mentoring"]
+    }
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Computer Science",
+      "institution": "University of Technology",
+      "year": "2021",
+      "details": "Focused on software engineering, data structures, and web development technologies. Graduated Magna Cum Laude with a 3.8 GPA.",
+      "coursework": ["Data Structures", "Algorithms", "Software Engineering", "Database Systems", "Web Development"]
+    },
+    {
+      "degree": "Associate of Applied Science",
+      "institution": "Community College",
+      "year": "2019",
+      "details": "Foundation in computer programming and information technology.",
+      "coursework": ["Programming Fundamentals", "Web Design", "Computer Networks", "IT Support"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "year": "2023",
+      "credentialId": "AWS-CCP-2023"
+    },
+    {
+      "name": "React Developer Certification",
+      "issuer": "Meta",
+      "year": "2022",
+      "credentialId": "META-REACT-2022"
+    },
+    {
+      "name": "JavaScript Algorithms and Data Structures",
+      "issuer": "freeCodeCamp",
+      "year": "2021",
+      "credentialId": "FCC-JS-2021"
+    }
+  ],
+  "contact": {
+    "email": "ethan@example.com",
+    "linkedin": "https://linkedin.com/in/ethangordon",
+    "github": "https://github.com/Gbrothers1",
+    "location": "Available Remotely",
+    "phone": "+1 (555) 123-4567",
+    "website": "https://ethangordon.io"
+  }
+}
