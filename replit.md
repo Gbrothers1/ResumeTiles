@@ -10,11 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-### 2025-07-27: Admin System Bug Fixes
+### 2025-07-27: Admin System Bug Fixes & Content Update
 - Fixed session authentication issue by enabling `createTableIfMissing: true` for PostgreSQL sessions
 - Resolved TypeScript type errors in storage layer and admin dashboard
 - Fixed authentication route mismatch and added missing admin API endpoints
 - Created default admin credentials: username=`admin`, password=`admin123`
+- Updated resume with authentic Ethan Gordon data from GitHub repository
+- Fixed SkillsSection component error by updating skill categories to match technical background
+- Added professional profile photo and updated all content with real systems integration expertise
 - All admin functionality now working: login, dashboard, GPG settings, API key management
 
 ## System Architecture

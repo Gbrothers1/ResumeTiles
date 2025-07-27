@@ -10,10 +10,10 @@ interface Skills {
   frameworks: string[];
   tools: string[];
   categories: {
-    frontend: string[];
-    backend: string[];
-    tools: string[];
-    soft: string[];
+    robotics: string[];
+    networking: string[];
+    embedded: string[];
+    infrastructure: string[];
   };
 }
 
@@ -80,9 +80,9 @@ export function SkillsSection({ data }: SkillsSectionProps) {
       {/* Skill Categories Grid */}
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-ios-blue/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
-          <h4 className="font-semibold text-ios-blue mb-3 text-center">Frontend</h4>
+          <h4 className="font-semibold text-ios-blue mb-3 text-center">Robotics</h4>
           <div className="space-y-2">
-            {data.categories.frontend.slice(0, 4).map((skill, index) => (
+            {data.categories.robotics.slice(0, 4).map((skill, index) => (
               <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
                 {skill}
               </div>
@@ -91,9 +91,34 @@ export function SkillsSection({ data }: SkillsSectionProps) {
         </div>
         
         <div className="bg-ios-green/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
-          <h4 className="font-semibold text-ios-green mb-3 text-center">Backend</h4>
+          <h4 className="font-semibold text-ios-green mb-3 text-center">Networking</h4>
           <div className="space-y-2">
-            {data.categories.backend.slice(0, 4).map((skill, index) => (
+            {data.categories.networking.slice(0, 4).map((skill, index) => (
+              <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Additional Skill Categories */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="bg-orange-500/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
+          <h4 className="font-semibold text-orange-600 mb-3 text-center">Embedded</h4>
+          <div className="space-y-2">
+            {data.categories.embedded.slice(0, 4).map((skill, index) => (
+              <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="bg-purple-500/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
+          <h4 className="font-semibold text-purple-600 mb-3 text-center">Infrastructure</h4>
+          <div className="space-y-2">
+            {data.categories.infrastructure.slice(0, 4).map((skill, index) => (
               <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
                 {skill}
               </div>
