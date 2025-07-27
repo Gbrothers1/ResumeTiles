@@ -36,13 +36,19 @@ export function SwipeableTiles({ sections, onRewardUnlocked, personalInfo }: Swi
     }
   }, [currentIndex, sections]);
 
-  // Check if journey is complete (viewed all sections)
+  // Check if journey is complete (viewed all sections) and not swiped back
   useEffect(() => {
-    if (Array.from(viewedSections).length === sections.length && !hasCompletedJourney) {
+    const allSectionsViewed = viewedSections.size === sections.length;
+    const isAtLastSection = currentIndex === sections.length - 1;
+    
+    if (allSectionsViewed && isAtLastSection && !hasCompletedJourney) {
       setHasCompletedJourney(true);
       onRewardUnlocked();
+    } else if (hasCompletedJourney && currentIndex < sections.length - 1) {
+      // Hide reward if user swipes back from last section
+      setHasCompletedJourney(false);
     }
-  }, [viewedSections, sections.length, hasCompletedJourney, onRewardUnlocked]);
+  }, [viewedSections, sections.length, hasCompletedJourney, onRewardUnlocked, currentIndex]);
 
   const goToNext = () => {
     if (currentIndex < sections.length - 1) {
@@ -103,7 +109,7 @@ export function SwipeableTiles({ sections, onRewardUnlocked, personalInfo }: Swi
       >
         {/* Current Tile */}
         <div className="relative">
-          <Card className={`${currentSection.color} border-0 rounded-ios shadow-2xl transform transition-all duration-500 animate-slide-in-up`}>
+          <Card className={`${isMobile ? currentSection.color : 'bg-white'} border-0 rounded-ios shadow-2xl transform transition-all duration-500 animate-slide-in-up`}>
             <CardContent className="p-8">
               {/* Tile Header */}
               <div className="flex items-center mb-6">

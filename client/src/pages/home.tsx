@@ -10,7 +10,7 @@ import { EducationSection } from "@/components/EducationSection";
 import { ContactSection } from "@/components/ContactSection";
 import { useMobileDetection } from "@/hooks/use-mobile-detection";
 import { useToast } from "@/hooks/use-toast";
-import { User, Briefcase, Code, Layers, GraduationCap, Phone } from "lucide-react";
+import { User, Briefcase, Code, Layers, GraduationCap, Phone, Settings } from "lucide-react";
 import resumeData from "@/data/resume.json";
 
 export type TabType = "summary" | "experience" | "projects" | "skills" | "education" | "contact";
@@ -126,13 +126,23 @@ export default function Home() {
 
   // Desktop fallback with traditional navigation
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen relative">
       <MobileHeader personalInfo={resumeData.personalInfo} />
       <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} />
       
       <main className="px-5 py-6 pb-20">
         {renderActiveSection()}
       </main>
+
+      {/* Discreet Admin Access Link */}
+      <div className="fixed bottom-4 right-4">
+        <button 
+          onClick={() => window.location.href = '/admin'}
+          className="w-8 h-8 bg-ios-subtle/20 hover:bg-ios-blue/20 rounded-full flex items-center justify-center transition-colors opacity-30 hover:opacity-80"
+        >
+          <Settings className="h-4 w-4 text-ios-subtle" />
+        </button>
+      </div>
     </div>
   );
 }

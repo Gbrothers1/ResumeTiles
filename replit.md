@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application built as a modern, mobile-first digital resume with a revolutionary swipeable tile interface. The application showcases professional information through an iOS-inspired design with intelligent mobile detection and reward-based user engagement. Mobile users enjoy a gamified swipe-through experience with a "Hire Me Now" reward at completion, while desktop users get traditional navigation. Built using React with TypeScript on the frontend, Express.js on the backend, and uses Drizzle ORM with PostgreSQL for data persistence.
+This is a full-stack web application built as a modern, mobile-first digital resume with a revolutionary swipeable tile interface and secure admin system. The application showcases professional information through an iOS-inspired design with intelligent mobile detection and reward-based user engagement. Mobile users enjoy a gamified swipe-through experience with a "Hire Me Now" reward at completion, while desktop users get traditional navigation. The system includes a secure single-user admin interface with GPG-based API authentication for programmatic content updates. Built using React with TypeScript on the frontend, Express.js with session-based authentication on the backend, and uses PostgreSQL with Drizzle ORM for data persistence.
 
 ## User Preferences
 
