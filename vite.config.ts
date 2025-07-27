@@ -10,9 +10,24 @@ export default defineConfig({
   // sets (format: "owner/repo"). During local development the base should
   // stay "/" so nothing changes for `npm run dev`.
   base:
-    process.env.NODE_ENV === "production" && process.env.GITHUB_REPOSITORY
-      ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`
-      : "/",
+    (() => {
+      if (process.env.NODE_ENV !== "production") return "/";
+
+      // 1️⃣ CI environments (like GitHub Actions) expose GITHUB_REPOSITORY
+      if (process.env.GITHUB_REPOSITORY) {
+        return `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`;
+      }
+
+      // 2️⃣ Local/npm builds expose the package.json homepage as npm_package_homepage
+      //    (npm automatically injects it into the env when running scripts)
+      if (process.env.npm_package_homepage) {
+        const pathname = new URL(process.env.npm_package_homepage).pathname;
+        return pathname.endsWith("/") ? pathname : `${pathname}/`;
+      }
+
+      // 3️⃣ Fallback to root
+      return "/";
+    })(),
   plugins: [
     react(),
     runtimeErrorOverlay(),
