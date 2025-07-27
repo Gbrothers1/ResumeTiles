@@ -1,6 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Github, MapPin, ExternalLink, Download, Phone, ChevronRight } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, ExternalLink, Download, Phone, MessageCircle } from "lucide-react";
 
 interface Contact {
   email: string;
@@ -17,92 +16,98 @@ interface ContactSectionProps {
 
 export function ContactSection({ data }: ContactSectionProps) {
   const handleDownloadResume = () => {
-    // In a real implementation, this would trigger a PDF download
     window.print();
   };
 
-  const contactItems = [
+  const contactMethods = [
     {
       icon: Mail,
       label: "Email",
       value: data.email,
       action: () => window.open(`mailto:${data.email}`, "_blank"),
       color: "bg-ios-blue",
-      showChevron: true,
+      priority: "primary"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "Connect with me",
+      value: "Professional Network",
       action: () => window.open(data.linkedin, "_blank"),
       color: "bg-blue-600",
-      showExternal: true,
+      priority: "secondary"
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "View my projects",
+      value: "Code Portfolio",
       action: () => window.open(data.github, "_blank"),
       color: "bg-gray-900",
-      showExternal: true,
-    },
+      priority: "secondary"
+    }
   ];
 
   return (
-    <section className="px-5 py-6 space-y-5">
-      <h2 className="text-xl font-bold text-ios-black flex items-center">
-        <Phone className="text-ios-blue mr-2 h-6 w-6" />
-        Get In Touch
-      </h2>
-
-      {/* Contact Cards */}
-      <div className="space-y-3">
-        {contactItems.map((item, index) => (
-          <Card 
-            key={index}
-            className="bg-white border border-ios-gray rounded-ios shadow-sm cursor-pointer active:bg-ios-gray transition-colors"
-            onClick={item.action}
-          >
-            <CardContent className="p-4">
+    <div className="space-y-6">
+      {/* Quick Contact Actions */}
+      <div className="bg-gradient-to-br from-ios-blue/20 to-ios-green/20 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+        <h3 className="font-semibold text-ios-black mb-4 flex items-center justify-center">
+          <MessageCircle className="text-ios-blue mr-2 h-5 w-5" />
+          Let's Connect
+        </h3>
+        <div className="space-y-3">
+          {contactMethods.map((method, index) => (
+            <button 
+              key={index}
+              onClick={method.action}
+              className="w-full bg-white/70 hover:bg-white/90 backdrop-blur-sm rounded-md p-4 border border-white/20 active:scale-95 transition-all duration-200"
+            >
               <div className="flex items-center">
-                <div className={`w-10 h-10 ${item.color} rounded-full flex items-center justify-center mr-3`}>
-                  <item.icon className="text-white h-4 w-4" />
+                <div className={`w-10 h-10 ${method.color} rounded-full flex items-center justify-center mr-4`}>
+                  <method.icon className="text-white h-4 w-4" />
                 </div>
-                <div className="flex-1">
-                  <p className="font-medium text-ios-black">{item.label}</p>
-                  <p className="text-sm text-ios-subtle">{item.value}</p>
+                <div className="flex-1 text-left">
+                  <p className="font-medium text-ios-black">{method.label}</p>
+                  <p className="text-sm text-ios-subtle">{method.value}</p>
                 </div>
-                {item.showChevron && <ChevronRight className="text-ios-subtle h-4 w-4" />}
-                {item.showExternal && <ExternalLink className="text-ios-subtle h-3 w-3" />}
+                <ExternalLink className="text-ios-subtle h-4 w-4" />
               </div>
-            </CardContent>
-          </Card>
-        ))}
+            </button>
+          ))}
+        </div>
+      </div>
 
-        {/* Location Card */}
-        <Card className="bg-white border border-ios-gray rounded-ios shadow-sm">
-          <CardContent className="p-4">
-            <div className="flex items-center">
-              <div className="w-10 h-10 bg-ios-green rounded-full flex items-center justify-center mr-3">
-                <MapPin className="text-white h-4 w-4" />
-              </div>
-              <div className="flex-1">
-                <p className="font-medium text-ios-black">Location</p>
-                <p className="text-sm text-ios-subtle">{data.location}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      {/* Location Info */}
+      <div className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+        <div className="flex items-center justify-center">
+          <div className="w-12 h-12 bg-ios-green rounded-full flex items-center justify-center mr-4">
+            <MapPin className="text-white h-5 w-5" />
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-ios-black">Location</p>
+            <p className="text-ios-subtle">{data.location}</p>
+          </div>
+        </div>
       </div>
 
       {/* Download Resume */}
-      <Button
-        onClick={handleDownloadResume}
-        className="w-full bg-ios-blue hover:bg-ios-blue/90 text-white py-4 rounded-ios font-medium active:scale-95 transition-transform"
-      >
-        <Download className="mr-2 h-4 w-4" />
-        Download Resume PDF
-      </Button>
-    </section>
+      <div className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+        <Button
+          onClick={handleDownloadResume}
+          className="w-full bg-gradient-to-r from-ios-blue to-ios-green hover:from-ios-blue/90 hover:to-ios-green/90 text-white py-4 rounded-ios font-semibold shadow-lg active:scale-95 transition-all duration-200"
+        >
+          <Download className="mr-2 h-5 w-5" />
+          Download Resume PDF
+        </Button>
+      </div>
+
+      {/* Contact Stats */}
+      <div className="bg-gradient-to-br from-ios-green/10 to-ios-blue/10 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+        <h3 className="font-semibold text-ios-black mb-3 text-center">Response Time</h3>
+        <div className="text-center">
+          <div className="text-3xl font-bold text-ios-green mb-1">24h</div>
+          <div className="text-sm text-ios-subtle">Average Response</div>
+        </div>
+      </div>
+    </div>
   );
 }

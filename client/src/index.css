@@ -149,6 +149,22 @@
   scrollbar-width: none;
 }
 
+/* Enhanced transparency and blur effects */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
 /* Custom animations */
 @keyframes slideInUp {
   from {
@@ -161,17 +177,91 @@
   }
 }
 
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .animate-slide-in-up {
   animation: slideInUp 0.3s ease-out;
 }
 
-/* Active states for touch devices */
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out;
+}
+
+/* Enhanced touch interactions */
 @media (hover: none) and (pointer: coarse) {
   .active\:scale-95:active {
     transform: scale(0.95);
+    transition: transform 0.1s ease-out;
   }
   
   .active\:bg-ios-gray:active {
     background-color: var(--ios-gray);
   }
+
+  /* Swipe hint animation */
+  .swipe-hint {
+    animation: swipeHint 2s ease-in-out infinite;
+  }
+}
+
+@keyframes swipeHint {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(-10px);
+    opacity: 1;
+  }
+}
+
+/* Gradient overlays for better readability */
+.gradient-overlay {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(242,242,247,0.8) 100%);
+}
+
+/* Progress bar animations */
+.progress-bar {
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tile transition effects */
+.tile-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tile-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 122, 255, 0.15);
 }

@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, Check } from "lucide-react";
+import { Briefcase, Check, Calendar, MapPin } from "lucide-react";
 
 interface Experience {
   title: string;
@@ -16,52 +16,60 @@ interface ExperienceSectionProps {
 
 export function ExperienceSection({ data }: ExperienceSectionProps) {
   return (
-    <section className="px-5 py-6 space-y-5">
-      <h2 className="text-xl font-bold text-ios-black flex items-center">
-        <Briefcase className="text-ios-blue mr-2 h-6 w-6" />
-        Work Experience
-      </h2>
-
+    <div className="space-y-6">
       {data.map((job, index) => (
-        <Card key={index} className="bg-white border border-ios-gray rounded-ios shadow-sm">
-          <CardContent className="p-5">
-            <div className="flex justify-between items-start mb-3">
-              <div className="flex-1">
-                <h3 className="font-semibold text-ios-black">{job.title}</h3>
-                <p className="text-ios-blue font-medium">{job.company}</p>
+        <div key={index} className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-ios-black mb-1">{job.title}</h3>
+              <p className="text-ios-blue font-semibold text-lg">{job.company}</p>
+              
+              <div className="flex items-center space-x-4 mt-2 text-sm text-ios-subtle">
+                <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  {job.period}
+                </div>
                 {job.location && (
-                  <p className="text-xs text-ios-subtle">{job.location}</p>
+                  <div className="flex items-center">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    {job.location}
+                  </div>
                 )}
               </div>
-              <span className="text-sm text-ios-subtle bg-ios-gray px-2 py-1 rounded-md">
-                {job.period}
-              </span>
             </div>
-            
-            <ul className="space-y-2 mb-4">
-              {job.achievements.map((achievement, achievementIndex) => (
-                <li key={achievementIndex} className="flex items-start">
-                  <Check className="text-ios-green mr-2 mt-1 h-3 w-3 flex-shrink-0" />
-                  <span className="text-sm text-ios-black">{achievement}</span>
-                </li>
-              ))}
-            </ul>
+          </div>
 
-            {job.technologies && (
-              <div className="flex flex-wrap gap-2">
-                {job.technologies.map((tech, techIndex) => (
-                  <span 
-                    key={techIndex}
-                    className="text-xs bg-ios-blue/10 text-ios-blue px-2 py-1 rounded-md"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            )}
-          </CardContent>
-        </Card>
+          {/* Key Achievements */}
+          <div className="mb-4">
+            <h4 className="font-semibold text-ios-black mb-3 flex items-center">
+              <Briefcase className="h-4 w-4 mr-2 text-ios-green" />
+              Key Achievements
+            </h4>
+            <div className="space-y-2">
+              {job.achievements.slice(0, 3).map((achievement, achievementIndex) => (
+                <div key={achievementIndex} className="flex items-start">
+                  <Check className="text-ios-green mr-2 mt-1 h-4 w-4 flex-shrink-0" />
+                  <span className="text-sm text-ios-black leading-relaxed">{achievement}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Technologies */}
+          {job.technologies && (
+            <div className="flex flex-wrap gap-2">
+              {job.technologies.slice(0, 6).map((tech, techIndex) => (
+                <span 
+                  key={techIndex}
+                  className="text-xs bg-ios-blue/20 text-ios-blue px-3 py-1 rounded-full font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       ))}
-    </section>
+    </div>
   );
 }

@@ -1,3 +1,4 @@
+// Desktop fallback navigation component (used when swipeable tiles are not active)
 import { TabType } from "@/pages/home";
 
 interface NavigationTabsProps {
@@ -16,7 +17,7 @@ export function NavigationTabs({ activeTab, onTabChange }: NavigationTabsProps) 
   ];
 
   return (
-    <nav className="bg-white border-b border-ios-gray sticky top-16 z-40">
+    <nav className="bg-white/90 backdrop-blur-md border-b border-ios-gray/30 sticky top-16 z-40">
       <div className="overflow-x-auto">
         <div className="flex px-5 space-x-6 min-w-max">
           {tabs.map((tab) => (

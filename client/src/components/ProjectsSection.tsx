@@ -1,6 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Code, Github, ExternalLink } from "lucide-react";
+import { Code, Github, ExternalLink, Star } from "lucide-react";
 
 interface Project {
   name: string;
@@ -17,7 +16,7 @@ interface ProjectsSectionProps {
 }
 
 export function ProjectsSection({ data }: ProjectsSectionProps) {
-  const featuredProjects = data.filter(project => project.featured);
+  const featuredProjects = data.filter(project => project.featured).slice(0, 2);
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
@@ -31,99 +30,84 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
   };
 
   return (
-    <section className="px-5 py-6 space-y-5">
-      <h2 className="text-xl font-bold text-ios-black flex items-center">
-        <Code className="text-ios-blue mr-2 h-6 w-6" />
-        Featured Projects
-      </h2>
-
-      {/* GitHub Integration Card - Featured Project */}
-      {featuredProjects.length > 0 && featuredProjects[0].name === "Digital Resume Terminal" && (
-        <Card className="bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-ios">
-          <CardContent className="p-5">
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold flex items-center">
-                <Github className="mr-2 h-5 w-5" />
-                {featuredProjects[0].name}
-              </h3>
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-xs bg-white/20 border-white/20 text-white hover:bg-white/30"
-                onClick={() => window.open(featuredProjects[0].githubUrl, "_blank")}
-              >
-                View Code
-              </Button>
+    <div className="space-y-6">
+      {featuredProjects.map((project, index) => (
+        <div key={index} className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex-1">
+              <div className="flex items-center mb-2">
+                <Star className="text-ios-blue h-5 w-5 mr-2" />
+                <h3 className="text-xl font-bold text-ios-black">{project.name}</h3>
+              </div>
+              <p className="text-ios-subtle mb-3 leading-relaxed">
+                {project.description}
+              </p>
             </div>
-            <p className="text-sm text-gray-300 mb-3">
-              {featuredProjects[0].description}
-            </p>
+            <span className={`text-xs px-3 py-1 rounded-full font-medium ${getStatusColor(project.status)}`}>
+              {project.status}
+            </span>
+          </div>
+
+          {/* Technologies */}
+          <div className="mb-4">
+            <h4 className="font-semibold text-ios-black mb-2 flex items-center">
+              <Code className="h-4 w-4 mr-2 text-ios-green" />
+              Tech Stack
+            </h4>
             <div className="flex flex-wrap gap-2">
-              {featuredProjects[0].technologies.map((tech, index) => (
-                <span 
-                  key={index}
-                  className="text-xs bg-white/20 px-2 py-1 rounded-md"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Other Projects */}
-      {featuredProjects.slice(1).map((project, index) => (
-        <Card key={index} className="bg-white border border-ios-gray rounded-ios shadow-sm">
-          <CardContent className="p-5">
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-ios-black">{project.name}</h3>
-              <span className={`text-xs px-2 py-1 rounded-md ${getStatusColor(project.status)}`}>
-                {project.status}
-              </span>
-            </div>
-            <p className="text-sm text-ios-subtle mb-3">
-              {project.description}
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, techIndex) => (
                 <span 
                   key={techIndex}
-                  className="text-xs bg-ios-gray text-ios-black px-2 py-1 rounded-md"
+                  className="text-xs bg-gradient-to-r from-ios-blue/20 to-ios-green/20 text-ios-black px-3 py-1 rounded-full font-medium border border-white/30"
                 >
                   {tech}
                 </span>
               ))}
             </div>
+          </div>
 
-            <div className="flex gap-2">
-              {project.githubUrl && project.githubUrl !== "#" && (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="text-xs"
-                  onClick={() => window.open(project.githubUrl, "_blank")}
-                >
-                  <Github className="mr-1 h-3 w-3" />
-                  Code
-                </Button>
-              )}
-              {project.liveUrl && project.liveUrl !== "#" && (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="text-xs"
-                  onClick={() => window.open(project.liveUrl, "_blank")}
-                >
-                  <ExternalLink className="mr-1 h-3 w-3" />
-                  Live Demo
-                </Button>
-              )}
-            </div>
-          </CardContent>
-        </Card>
+          {/* Action Buttons */}
+          <div className="flex gap-3">
+            {project.githubUrl && project.githubUrl !== "#" && (
+              <Button
+                onClick={() => window.open(project.githubUrl, "_blank")}
+                variant="outline"
+                size="sm"
+                className="flex items-center bg-white/50 hover:bg-white/70 border-ios-gray"
+              >
+                <Github className="mr-2 h-4 w-4" />
+                View Code
+              </Button>
+            )}
+            {project.liveUrl && project.liveUrl !== "#" && (
+              <Button
+                onClick={() => window.open(project.liveUrl, "_blank")}
+                variant="outline"
+                size="sm"
+                className="flex items-center bg-ios-blue/10 hover:bg-ios-blue/20 text-ios-blue border-ios-blue/30"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Live Demo
+              </Button>
+            )}
+          </div>
+        </div>
       ))}
-    </section>
+
+      {/* Quick Stats */}
+      <div className="bg-gradient-to-br from-ios-blue/20 to-ios-green/20 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+        <h3 className="font-semibold text-ios-black mb-3 text-center">Project Portfolio</h3>
+        <div className="grid grid-cols-2 gap-4 text-center">
+          <div>
+            <div className="text-2xl font-bold text-ios-blue mb-1">{data.length}</div>
+            <div className="text-sm text-ios-subtle">Total Projects</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-ios-green mb-1">{featuredProjects.length}</div>
+            <div className="text-sm text-ios-subtle">Featured</div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
