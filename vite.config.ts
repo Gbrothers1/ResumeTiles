@@ -4,6 +4,15 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // When building for production on GitHub Pages, serve the app from
+  // `/<repo-name>/` instead of the domain root. We can deduce the repo name
+  // from the `GITHUB_REPOSITORY` environment variable that GitHub Actions
+  // sets (format: "owner/repo"). During local development the base should
+  // stay "/" so nothing changes for `npm run dev`.
+  base:
+    process.env.NODE_ENV === "production" && process.env.GITHUB_REPOSITORY
+      ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`
+      : "/",
   plugins: [
     react(),
     runtimeErrorOverlay(),
