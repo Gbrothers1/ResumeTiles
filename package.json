@@ -6,10 +6,14 @@
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "postbuild": "cp dist/public/index.html dist/public/404.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist/public",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
     "db:push": "drizzle-kit push"
   },
+  "homepage": "https://<your-github-username>.github.io/<repo-name>/",
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
@@ -104,7 +108,8 @@
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.1",
     "typescript": "5.6.3",
-    "vite": "^5.4.19"
+    "vite": "^5.4.19",
+    "gh-pages": "^5.0.0"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"
