@@ -1,179 +1,209 @@
 {
   "personalInfo": {
     "name": "Ethan Gordon",
-    "title": "Software Developer",
-    "email": "ethan@example.com",
-    "location": "Available Remotely",
-    "phone": "+1 (555) 123-4567",
-    "website": "https://ethangordon.io",
-    "linkedin": "https://linkedin.com/in/ethangordon",
+    "title": "Systems Integrator | Embedded/Robotics | Net/DevOps | U.S. Navy Vet (Secret-eligible)",
+    "email": "resume@ethangordon.io",
+    "location": "Elko, NV (Relocating to Atlanta, GA)",
+    "phone": "Available upon request",
+    "website": "https://resume.ethangordon.io",
+    "linkedin": "Available upon request",
     "github": "https://github.com/Gbrothers1"
   },
   "summary": {
-    "text": "Passionate software developer with expertise in modern web technologies and a strong foundation in full-stack development. Experienced in building responsive applications, API integration, and creating user-friendly interfaces. Committed to writing clean, maintainable code and staying current with industry best practices.",
+    "text": "I bridge hardware, autonomy software, and networking. From ROS2 stacks on a Steam Deck to GPU ML in LXC and RF mesh tinkering with RTL-SDR, I ship field-ready systems, then break and harden them in the wild. Mission-first, clearance-ready, ramping in days—not months.",
     "highlights": [
-      "3+ years of professional development experience",
-      "15+ projects completed across various technologies",
-      "Strong focus on user experience and performance optimization",
-      "Expertise in modern JavaScript frameworks and cloud technologies"
+      "5+ years of systems integration experience",
+      "U.S. Navy Nuclear Field veteran with Secret clearance eligibility",
+      "Expertise in ROS2, embedded systems, and RF analysis",
+      "Rapid prototyping and deployment specialist"
     ]
   },
   "currentFocus": {
-    "text": "Building innovative web applications and expanding expertise in cloud technologies, with a focus on creating scalable, efficient solutions that deliver exceptional user experiences."
+    "text": "Building field-ready autonomous systems and robust network infrastructure. Specializing in the integration of robotics control stacks, GPU-accelerated ML, and secure communication protocols for mission-critical applications."
   },
   "stats": {
-    "experience": "3+",
-    "projects": "15+",
-    "technologies": "12+",
-    "certifications": "3"
+    "experience": "5+",
+    "projects": "8+",
+    "technologies": "20+",
+    "certifications": "Navy Nuclear"
   },
   "experience": [
     {
-      "title": "Software Developer",
-      "company": "Tech Solutions Inc.",
-      "period": "2022 - Present",
-      "location": "Remote",
+      "title": "Independent Engineer / Founder",
+      "company": "GPR Mobile",
+      "period": "2018 - Present",
+      "location": "Elko, NV",
       "achievements": [
-        "Developed and maintained web applications using modern JavaScript frameworks",
-        "Collaborated with cross-functional teams to deliver projects on time",
-        "Implemented responsive design principles for optimal user experience",
-        "Reduced application load times by 40% through performance optimizations",
-        "Led code reviews and mentored junior developers"
+        "Built ROS2↔WebSocket bridge with React UI reducing operator setup from hours to minutes",
+        "Fixed Genesis AI Sim AVX crashes in LXC/Docker environments, restoring RL simulation functionality",
+        "Implemented NGINX TLS Proxy with self-signed PKI securing Portainer/OpenWebUI/Netdata",
+        "Developed RF/Mesh analysis tools using RTL-SDR and explored phased-array reuse for P2P links",
+        "Created embedded diagnostics systems including MCU coil tester and TBI injector current-limit solutions"
       ],
-      "technologies": ["React", "Node.js", "TypeScript", "AWS", "MongoDB"]
+      "technologies": ["ROS2", "Docker", "NGINX", "RTL-SDR", "C/C++", "Python", "React"]
     },
     {
-      "title": "Junior Developer",
-      "company": "Digital Agency LLC",
-      "period": "2021 - 2022",
-      "location": "Hybrid",
+      "title": "Nuclear Field Power School Graduate",
+      "company": "U.S. Navy",
+      "period": "2013 - 2015",
+      "location": "Various Naval Facilities",
       "achievements": [
-        "Built responsive websites using HTML, CSS, and JavaScript",
-        "Optimized website performance and implemented SEO best practices",
-        "Collaborated with design teams to implement pixel-perfect interfaces",
-        "Maintained and updated existing client websites"
+        "Graduated rigorous Nuclear Field Power School program",
+        "Operated complex nuclear systems under strict safety and security protocols",
+        "Maintained DoD Secret clearance with excellent security record",
+        "Developed expertise in high-reliability systems and mission-critical operations",
+        "Gained experience in high-stress, regulated technical environments"
       ],
-      "technologies": ["HTML5", "CSS3", "JavaScript", "WordPress", "PHP"]
+      "technologies": ["Nuclear Systems", "Safety Protocols", "System Monitoring", "Technical Documentation"]
     }
   ],
   "projects": [
     {
-      "name": "Digital Resume Terminal",
-      "description": "A modern, terminal-style digital resume with GitHub integration, responsive design, and professional print functionality.",
+      "name": "SDR_OS Steam-Deck ROS2 Control Stack",
+      "description": "ROS2↔WebSocket bridge with React UI, CUDA/Ollama containers for rapid operator deployment on Steam Deck hardware.",
       "status": "Completed",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
-      "githubUrl": "https://github.com/Gbrothers1/ethan_resume",
-      "liveUrl": "https://resume.ethangordon.io",
-      "featured": true
-    },
-    {
-      "name": "E-Commerce Platform",
-      "description": "Full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
-      "status": "Completed",
-      "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Express"],
-      "githubUrl": "#",
+      "technologies": ["ROS2", "WebSockets", "React", "CUDA", "Docker", "Steam Deck", "Ollama"],
+      "githubUrl": "https://github.com/Gbrothers1",
       "liveUrl": "#",
       "featured": true
     },
     {
-      "name": "Task Management App",
-      "description": "Mobile-first task management application with real-time collaboration features.",
-      "status": "In Progress",
-      "technologies": ["Vue.js", "Firebase", "PWA", "Vuetify"],
-      "githubUrl": "#",
+      "name": "Genesis AI Sim AVX Fix",
+      "description": "CPU-flag gating & legacy binaries solution; resolved AVX2 crashes in LXC/Docker environments to restore RL simulations.",
+      "status": "Completed",
+      "technologies": ["C/C++", "Docker", "LXC", "AVX2", "System Programming", "RL Simulation"],
+      "githubUrl": "https://github.com/Gbrothers1",
       "liveUrl": "#",
       "featured": true
     },
     {
-      "name": "Weather Dashboard",
-      "description": "Real-time weather application with location-based forecasts and interactive maps.",
+      "name": "NGINX TLS Proxy",
+      "description": "Self-signed PKI + SNI securing Portainer/OpenWebUI/Netdata with unified HTTPS entry point.",
       "status": "Completed",
-      "technologies": ["React", "OpenWeather API", "Leaflet", "Chart.js"],
-      "githubUrl": "#",
+      "technologies": ["NGINX", "TLS", "PKI", "Docker", "Security", "SSL/SNI"],
+      "githubUrl": "https://github.com/Gbrothers1",
+      "liveUrl": "#",
+      "featured": true
+    },
+    {
+      "name": "RF/Mesh Network Analysis",
+      "description": "IQ capture/FFT carrier & SNR analysis; explored phased-array reuse for P2P links using RTL-SDR and Starlink integration.",
+      "status": "Completed",
+      "technologies": ["RTL-SDR", "Python", "Signal Processing", "RF Engineering", "Starlink", "FFT"],
+      "githubUrl": "https://github.com/Gbrothers1",
+      "liveUrl": "#",
+      "featured": true
+    },
+    {
+      "name": "Embedded Diagnostics Suite",
+      "description": "MCU coil tester for Skidoo; 1 Ω TBI injector current-limit solution with series R/PWM control.",
+      "status": "Completed",
+      "technologies": ["Microcontrollers", "Embedded C", "PWM", "Current Limiting", "Automotive Diagnostics"],
+      "githubUrl": "https://github.com/Gbrothers1",
       "liveUrl": "#",
       "featured": false
+    },
+    {
+      "name": "GPU Passthrough → LXC",
+      "description": "NVIDIA device passthrough to LXC containers; Docker ML stack with Netdata & Portainer management.",
+      "status": "Completed",
+      "technologies": ["NVIDIA GPU", "LXC", "Docker", "ML Infrastructure", "Netdata", "Portainer"],
+      "githubUrl": "https://github.com/Gbrothers1",
+      "liveUrl": "#",
+      "featured": false
+    },
+    {
+      "name": "Gimbal PID + Computer Vision",
+      "description": "PID control system in C++ with OpenCV target tracking; XR/VR operator UX concept implementation.",
+      "status": "Completed",
+      "technologies": ["C++", "OpenCV", "PID Control", "Computer Vision", "XR/VR", "Real-time Systems"],
+      "githubUrl": "https://github.com/Gbrothers1",
+      "liveUrl": "#",
+      "featured": false
+    },
+    {
+      "name": "Legal Evidence Vector Database",
+      "description": "SentenceTransformer + FAISS over recfile/org-roam logs; automated court packet generation reducing preparation time significantly.",
+      "status": "Completed",
+      "technologies": ["Python", "FAISS", "SentenceTransformer", "NLP", "Document Processing", "Vector DB"],
+      "githubUrl": "https://github.com/Gbrothers1",
+      "liveUrl": "#",
+      "featured": true
     }
   ],
   "skills": {
     "programming": [
-      { "name": "JavaScript", "level": 5 },
-      { "name": "TypeScript", "level": 4 },
-      { "name": "Python", "level": 3 },
-      { "name": "HTML5", "level": 5 },
-      { "name": "CSS3", "level": 5 },
-      { "name": "SQL", "level": 3 }
+      { "name": "Python", "level": 5 },
+      { "name": "C/C++", "level": 5 },
+      { "name": "Rust", "level": 4 },
+      { "name": "Bash", "level": 5 },
+      { "name": "JavaScript", "level": 3 }
     ],
     "frameworks": [
+      "ROS2",
       "React",
-      "Vue.js",
-      "Node.js",
-      "Express",
-      "Next.js",
-      "Tailwind CSS",
-      "Bootstrap",
-      "jQuery"
+      "Docker/LXC",
+      "OpenCV",
+      "NGINX",
+      "WebSockets",
+      "FAISS",
+      "TensorFlow/PyTorch"
     ],
     "tools": [
+      "Linux (Debian/Proxmox)",
       "Git & GitHub",
-      "VS Code",
-      "MongoDB",
-      "PostgreSQL",
-      "Docker",
-      "AWS",
-      "Firebase",
-      "Figma",
-      "Postman",
-      "Webpack"
+      "RTL-SDR",
+      "CUDA/GPU Programming",
+      "Nix/Make",
+      "CI/CD Pipelines",
+      "Microcontrollers",
+      "Signal Processing",
+      "Network Security",
+      "Container Orchestration"
     ],
     "categories": {
-      "frontend": ["React", "Vue.js", "TypeScript", "Tailwind CSS", "Responsive Design"],
-      "backend": ["Node.js", "Express", "Python", "RESTful APIs", "Database Design"],
-      "tools": ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL"],
-      "soft": ["Problem Solving", "Team Collaboration", "Code Review", "Mentoring"]
+      "robotics": ["ROS2", "WebSockets", "OpenCV", "PID/GNC", "HIL test rigs"],
+      "networking": ["TCP/UDP/IP", "NGINX/TLS", "Mesh/RF protocols", "RTL-SDR", "Phased arrays"],
+      "embedded": ["Microcontrollers", "Real-time systems", "Diagnostics", "Rapid prototyping"],
+      "infrastructure": ["Linux", "Docker/LXC", "CI/CD", "GPU Passthrough", "Security"]
     }
   },
   "education": [
     {
-      "degree": "Bachelor of Computer Science",
-      "institution": "University of Technology",
-      "year": "2021",
-      "details": "Focused on software engineering, data structures, and web development technologies. Graduated Magna Cum Laude with a 3.8 GPA.",
-      "coursework": ["Data Structures", "Algorithms", "Software Engineering", "Database Systems", "Web Development"]
+      "degree": "Nuclear Field Power School Graduate",
+      "institution": "U.S. Navy",
+      "year": "2013-2015",
+      "details": "Graduated rigorous nuclear engineering program. Operated in high-stress, regulated technical environments. Held DoD Secret clearance (lapsed) with strong classified-handling discipline.",
+      "coursework": ["Nuclear Engineering", "System Operations", "Safety Protocols", "Technical Documentation", "High-Reliability Systems"]
     },
     {
-      "degree": "Associate of Applied Science",
-      "institution": "Community College",
-      "year": "2019",
-      "details": "Foundation in computer programming and information technology.",
-      "coursework": ["Programming Fundamentals", "Web Design", "Computer Networks", "IT Support"]
+      "degree": "Self-directed Advanced Study",
+      "institution": "Computer Science/Robotics/Embedded Systems",
+      "year": "2018-Present",
+      "details": "Extensive independent learning in systems integration, robotics, and embedded development. College sophomore level in Secondary Education (Mathematics).",
+      "coursework": ["Systems Integration", "Robotics Control", "Embedded Programming", "Signal Processing", "Network Engineering"]
     }
   ],
   "certifications": [
     {
-      "name": "AWS Cloud Practitioner",
-      "issuer": "Amazon Web Services",
-      "year": "2023",
-      "credentialId": "AWS-CCP-2023"
+      "name": "DoD Secret Clearance",
+      "issuer": "U.S. Department of Defense",
+      "year": "2013-2015",
+      "credentialId": "Lapsed - Eligible for reinstatement"
     },
     {
-      "name": "React Developer Certification",
-      "issuer": "Meta",
-      "year": "2022",
-      "credentialId": "META-REACT-2022"
-    },
-    {
-      "name": "JavaScript Algorithms and Data Structures",
-      "issuer": "freeCodeCamp",
-      "year": "2021",
-      "credentialId": "FCC-JS-2021"
+      "name": "Nuclear Field Power School",
+      "issuer": "U.S. Navy",
+      "year": "2015",
+      "credentialId": "Nuclear Qualified"
     }
   ],
   "contact": {
-    "email": "ethan@example.com",
-    "linkedin": "https://linkedin.com/in/ethangordon",
+    "email": "resume@ethangordon.io",
+    "linkedin": "Available upon request",
     "github": "https://github.com/Gbrothers1",
-    "location": "Available Remotely",
-    "phone": "+1 (555) 123-4567",
-    "website": "https://ethangordon.io"
+    "location": "Elko, NV (Relocating to Atlanta, GA)",
+    "phone": "Available upon request",
+    "website": "https://resume.ethangordon.io"
   }
 }
