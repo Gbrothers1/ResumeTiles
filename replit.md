@@ -8,6 +8,15 @@ This is a full-stack web application built as a modern, mobile-first digital res
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+### 2025-07-27: Admin System Bug Fixes
+- Fixed session authentication issue by enabling `createTableIfMissing: true` for PostgreSQL sessions
+- Resolved TypeScript type errors in storage layer and admin dashboard
+- Fixed authentication route mismatch and added missing admin API endpoints
+- Created default admin credentials: username=`admin`, password=`admin123`
+- All admin functionality now working: login, dashboard, GPG settings, API key management
+
 ## System Architecture
 
 ### Frontend Architecture
