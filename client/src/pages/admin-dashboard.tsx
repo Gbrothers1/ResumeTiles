@@ -212,9 +212,9 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-ios-gray/20 to-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-ios-gray/30">
+      <div className="sticky top-0 z-40 bg-white border-b border-gray-300">
         <div className="max-w-7xl mx-auto px-5 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -474,7 +474,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                   </div>
 
                   {generatedApiKey && (
-                    <div className="p-4 bg-ios-green/10 border border-ios-green/30 rounded-ios">
+                    <div className="p-4 bg-green-50 border border-green-300 rounded-ios">
                       <p className="text-sm font-medium text-ios-green mb-2">
                         New API Key Generated - Copy it now!
                       </p>

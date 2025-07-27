@@ -18,7 +18,7 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
   return (
     <div className="space-y-6">
       {data.map((job, index) => (
-        <div key={index} className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+        <div key={index} className="bg-white rounded-ios p-6 border border-gray-300">
           <div className="flex items-start justify-between mb-4">
             <div className="flex-1">
               <h3 className="text-xl font-bold text-ios-black mb-1">{job.title}</h3>
@@ -61,7 +61,7 @@ export function ExperienceSection({ data }: ExperienceSectionProps) {
               {job.technologies.slice(0, 6).map((tech, techIndex) => (
                 <span 
                   key={techIndex}
-                  className="text-xs bg-ios-blue/20 text-ios-blue px-3 py-1 rounded-full font-medium"
+                  className="text-xs bg-blue-100 text-ios-blue px-3 py-1 rounded-full font-medium border border-blue-200"
                 >
                   {tech}
                 </span>

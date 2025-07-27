@@ -32,7 +32,7 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
   return (
     <div className="space-y-6">
       {featuredProjects.map((project, index) => (
-        <div key={index} className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+        <div key={index} className="bg-white rounded-ios p-6 border border-gray-300">
           <div className="flex items-start justify-between mb-4">
             <div className="flex-1">
               <div className="flex items-center mb-2">
@@ -58,7 +58,7 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
               {project.technologies.map((tech, techIndex) => (
                 <span 
                   key={techIndex}
-                  className="text-xs bg-gradient-to-r from-ios-blue/20 to-ios-green/20 text-ios-black px-3 py-1 rounded-full font-medium border border-white/30"
+                  className="text-xs bg-gray-100 text-ios-black px-3 py-1 rounded-full font-medium border border-gray-300"
                 >
                   {tech}
                 </span>
@@ -95,7 +95,7 @@ export function ProjectsSection({ data }: ProjectsSectionProps) {
       ))}
 
       {/* Quick Stats */}
-      <div className="bg-gradient-to-br from-ios-blue/20 to-ios-green/20 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+      <div className="bg-ios-gray rounded-ios p-6 border border-gray-300">
         <h3 className="font-semibold text-ios-black mb-3 text-center">Project Portfolio</h3>
         <div className="grid grid-cols-2 gap-4 text-center">
           <div>

@@ -38,14 +38,14 @@ export function SkillsSection({ data }: SkillsSectionProps) {
   return (
     <div className="space-y-6">
       {/* Top Skills Highlight */}
-      <div className="bg-gradient-to-br from-ios-blue/20 to-ios-green/20 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+      <div className="bg-ios-gray rounded-ios p-6 border border-gray-300">
         <h3 className="font-semibold text-ios-black mb-4 flex items-center justify-center">
           <Code className="text-ios-blue mr-2 h-5 w-5" />
           Top Programming Skills
         </h3>
         <div className="space-y-3">
           {topSkills.map((skill, index) => (
-            <div key={index} className="flex items-center justify-between bg-white/50 rounded-md p-3">
+            <div key={index} className="flex items-center justify-between bg-white rounded-md p-3 border border-gray-200">
               <span className="font-medium text-ios-black">{skill.name}</span>
               <div className="flex gap-1">
                 {renderStars(skill.level)}
@@ -56,7 +56,7 @@ export function SkillsSection({ data }: SkillsSectionProps) {
       </div>
 
       {/* Frameworks & Libraries */}
-      <div className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+      <div className="bg-white rounded-ios p-6 border border-gray-300">
         <h3 className="font-semibold text-ios-black mb-4 flex items-center">
           <Layers className="text-ios-green mr-2 h-5 w-5" />
           Frameworks & Libraries
@@ -79,22 +79,22 @@ export function SkillsSection({ data }: SkillsSectionProps) {
 
       {/* Skill Categories Grid */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-ios-blue/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
+        <div className="bg-blue-50 rounded-ios p-4 border border-blue-200">
           <h4 className="font-semibold text-ios-blue mb-3 text-center">Robotics</h4>
           <div className="space-y-2">
             {data.categories.robotics.slice(0, 4).map((skill, index) => (
-              <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
+              <div key={index} className="text-xs text-ios-black text-center bg-white rounded-md py-1 border border-gray-200">
                 {skill}
               </div>
             ))}
           </div>
         </div>
         
-        <div className="bg-ios-green/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
+        <div className="bg-green-50 rounded-ios p-4 border border-green-200">
           <h4 className="font-semibold text-ios-green mb-3 text-center">Networking</h4>
           <div className="space-y-2">
             {data.categories.networking.slice(0, 4).map((skill, index) => (
-              <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
+              <div key={index} className="text-xs text-ios-black text-center bg-white rounded-md py-1 border border-gray-200">
                 {skill}
               </div>
             ))}
@@ -104,22 +104,22 @@ export function SkillsSection({ data }: SkillsSectionProps) {
       
       {/* Additional Skill Categories */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-orange-500/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
+        <div className="bg-orange-50 rounded-ios p-4 border border-orange-200">
           <h4 className="font-semibold text-orange-600 mb-3 text-center">Embedded</h4>
           <div className="space-y-2">
             {data.categories.embedded.slice(0, 4).map((skill, index) => (
-              <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
+              <div key={index} className="text-xs text-ios-black text-center bg-white rounded-md py-1 border border-gray-200">
                 {skill}
               </div>
             ))}
           </div>
         </div>
         
-        <div className="bg-purple-500/10 backdrop-blur-sm rounded-ios p-4 border border-white/20">
+        <div className="bg-purple-50 rounded-ios p-4 border border-purple-200">
           <h4 className="font-semibold text-purple-600 mb-3 text-center">Infrastructure</h4>
           <div className="space-y-2">
             {data.categories.infrastructure.slice(0, 4).map((skill, index) => (
-              <div key={index} className="text-xs text-ios-black text-center bg-white/50 rounded-md py-1">
+              <div key={index} className="text-xs text-ios-black text-center bg-white rounded-md py-1 border border-gray-200">
                 {skill}
               </div>
             ))}
@@ -128,7 +128,7 @@ export function SkillsSection({ data }: SkillsSectionProps) {
       </div>
 
       {/* Tools Summary */}
-      <div className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+      <div className="bg-white rounded-ios p-6 border border-gray-300">
         <h3 className="font-semibold text-ios-black mb-3 flex items-center justify-center">
           <Wrench className="text-ios-subtle mr-2 h-5 w-5" />
           Development Tools

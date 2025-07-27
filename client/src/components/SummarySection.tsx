@@ -17,18 +17,18 @@ export function SummarySection({ data }: SummarySectionProps) {
     <div className="space-y-6">
       {/* Quick Stats Grid */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white/50 backdrop-blur-sm rounded-ios p-4 text-center border border-white/20">
+        <div className="bg-white rounded-ios p-4 text-center border border-gray-300">
           <div className="text-3xl font-bold text-ios-blue mb-1">{data.stats.experience}</div>
           <div className="text-sm text-ios-subtle">Years Experience</div>
         </div>
-        <div className="bg-white/50 backdrop-blur-sm rounded-ios p-4 text-center border border-white/20">
+        <div className="bg-white rounded-ios p-4 text-center border border-gray-300">
           <div className="text-3xl font-bold text-ios-green mb-1">{data.stats.projects}</div>
           <div className="text-sm text-ios-subtle">Projects Built</div>
         </div>
       </div>
 
       {/* Professional Summary */}
-      <div className="bg-white/70 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+      <div className="bg-white rounded-ios p-6 border border-gray-300">
         <h3 className="text-lg font-semibold mb-3 flex items-center text-ios-black">
           <User className="text-ios-blue mr-2 h-5 w-5" />
           About Me
@@ -49,7 +49,7 @@ export function SummarySection({ data }: SummarySectionProps) {
       </div>
 
       {/* Current Focus */}
-      <div className="bg-gradient-to-br from-ios-blue/20 to-ios-green/20 backdrop-blur-sm rounded-ios p-6 border border-white/20">
+      <div className="bg-blue-50 rounded-ios p-6 border border-blue-200">
         <h3 className="text-lg font-semibold mb-3 flex items-center text-ios-black">
           <Target className="text-ios-blue mr-2 h-5 w-5" />
           Current Focus
